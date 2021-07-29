@@ -1,0 +1,40 @@
+body {
+	font-family: monospace;
+}
+
+#expand-toggle {
+	display: none;
+
+}
+
+.expandable {
+	visibility: collapse;
+	background: gray;
+	color: white;
+}
+
+#expand-btn {
+	display: inline-block;
+	margin-top: 12px;
+	padding: 6px 12px;
+	background-color: #ff8888;
+	border: 1px solid;
+	border-radius: 3px;
+	transition: 0.3s;
+} 
+/* Creazione del pulsante che mostra le righe */
+#expand-btn::before {
+    content: "Mostra righe";
+}
+/* Mostra il contenuto nascosto quando la casella è spuntata */
+#expand-toggle:checked ~ * .expandable {
+	visibility: visible;
+}
+/* Modella il pulsante quando la casella di controllo è spuntata */
+#expand-toggle:checked ~ #expand-btn {
+	background-color: #88ff88;
+}
+/* Creazione del pulsante che nasconde le righe */
+#expand-toggle:checked ~ #expand-btn::before {
+	content: "Nascondi righe";
+}
